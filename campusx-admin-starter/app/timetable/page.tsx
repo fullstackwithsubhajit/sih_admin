@@ -1,0 +1,3 @@
+import { CalendarDays } from "lucide-react"; import { PageHeader } from "@/components/shared/PageHeader";
+const days=["Monday","Tuesday","Wednesday","Thursday","Friday"];
+export default function Timetable(){return <><PageHeader title="Timetable" description="Manage the academic timetable students will see." action="Add Class" href="#add"/><div className="timetable">{days.map((d,i)=><section className="panel" key={d}><h2>{d}</h2>{[["09:00","DSA","Prof. Sen","Room 203"],["11:00","DBMS","Prof. Roy","Lab 2"],["14:00","Web Development","Prof. Das","Room 106"]].map((x,j)=><div className="class-row" key={j}><b>{x[0]}</b><div><strong>{x[1]}</strong><span>{x[2]} · {x[3]}</span></div><CalendarDays size={17}/></div>)}</section>)}</div></>}
